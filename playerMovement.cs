@@ -98,4 +98,18 @@ public class playerMovement : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
             grounded = true;
     }
+
+    private bool isGrounded()
+{
+    RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer);
+    return raycastHit.collider != null;
+}
+// different way of seeing if player on ground
+
+private bool onWall()
+{
+    RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, new Vector2(transform.localScale.x, 0), 0.1f, wallLayer);
+    return raycastHit.collider != null;
+}
+// see if player on the wall/in vicinity of the wall
 }
