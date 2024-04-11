@@ -64,13 +64,34 @@ public class playerMovement : MonoBehaviour
             // time between jumps
 }
 
-    private void Jump()
-    {
-        body.velocity = new Vector2(body.velocity.x, speed);
-        anim.SetTrigger("jump");
-        grounded = false;
-        // to jump using space bar
-    }
+     private void Jump()
+ {
+     if(isGrounded())
+     {
+         body.velocity = new Vector2(body.velocity.x, jumpPower);
+         anim.SetTrigger("jump");
+         // to jump using space bar
+     }
+     // handle jump if on ground
+
+     else if (onWall() && !isGrounded())
+     {
+         if (horizontalInput == 0)
+         {
+             body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 10, 0);
+             transform.localScale = new Vector3(-Mathf.Sign(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+         }
+         else
+             body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 3, 6);
+         // Mathf returns 1 when facing right, -1 when facing left, -Mathf makes player move away from wall
+         // 3 is x movement from wall
+         // 6 is y movement from wall
+
+         wallJumpCooldown = 0;
+         
+     }
+     // handle jump if on wall
+ }
 
      private void OnCollisionEnter2D(Collision2D collision)
     {
