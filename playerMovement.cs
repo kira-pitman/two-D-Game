@@ -12,11 +12,12 @@ public class playerMovement : MonoBehaviour
     private float wallJumpCooldown;
     private float horizontalInput;
 
-    private void Awake()
+     private void Awake()
     {
         // get references for rigidbody and animator from game object
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     private void Update()
