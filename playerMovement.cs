@@ -28,10 +28,6 @@ public class playerMovement : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
         // faces left if moving left
 
-        if (Input.GetKey(KeyCode.Space))
-            body.velocity = new Vector2(body.velocity.x, speed);
-        // to jump using space bar
-        
         if (Input.GetKey(KeyCode.Space) && grounded) // only allows jumping when on the ground
             Jump();
 
