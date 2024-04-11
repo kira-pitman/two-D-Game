@@ -2,10 +2,15 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    [SerializeField] private float speed; 
+    [SerializeField] private float jumpPower;
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask wallLayer;
     private Rigidbody2D body;
     private Animator anim;
-    private bool grounded;
+    private BoxCollider2D boxCollider;
+    private float wallJumpCooldown;
+    private float horizontalInput;
 
     private void Awake()
     {
