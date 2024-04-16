@@ -4,7 +4,7 @@ public class playerAttack : MonoBehaviour
 {
 [SerializeField] private float attackCooldown; // time between attacks
 [SerializeField] private Transform firePoint; // where fireballs are fired from
-[SerializedField] private GameObject[] fireballs;
+[SerializeField] private GameObject[] fireballs;
 private Animator anim;
 private PlayerMovement playerMovement;
 private float cooldownTimer = Mathf.Infinity;
