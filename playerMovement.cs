@@ -92,11 +92,6 @@ public class playerMovement : MonoBehaviour
      }
      // handle jump if on wall
  }
-
-     private void OnCollisionEnter2D(Collision2D collision)
-{
-}
-
     private bool isGrounded()
 {
     RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer);
@@ -110,4 +105,10 @@ private bool onWall()
     return raycastHit.collider != null;
 }
 // see if player on the wall/in vicinity of the wall
+
+    private bool canAttack()
+    {
+        return horizontalInput == 0 && isGrounded() && !onWall();
+    }
+    // dictates when player can attack
 }
