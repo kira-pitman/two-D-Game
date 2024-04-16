@@ -110,4 +110,10 @@ private bool onWall()
     return raycastHit.collider != null;
 }
 // see if player on the wall/in vicinity of the wall
+
+    private bool canAttack()
+    {
+        return horizontalInput == 0 && isGrounded() && !onWall();
+    }
+    // dictates when player can attack
 }
