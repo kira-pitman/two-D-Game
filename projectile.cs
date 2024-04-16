@@ -20,4 +20,11 @@ public class Projectile : MonoBehaviour
         float movementSpeed = speed * Time.deltaTime;
         transform.Translate(movementSpeed, 0, 0);
     }
+
+    private void OnTriggerEnter2D(Collider2D collison)
+    {
+        hit = true;
+        boxCollider.enabled = false;
+        anim.SetTrigger("explode");
+    }
 }
