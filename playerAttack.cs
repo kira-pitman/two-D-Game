@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class playerAttack : MonoBehaviour
 {
-    [SerializeField] private float attackCooldown; // time between attacks
-    private Animator anim;
-    private PlayerMovement playerMovement;
-    private float cooldownTimer = Mathf.Infinity;
+[SerializeField] private float attackCooldown; // time between attacks
+[SerializeField] private Transform firePoint; // where fireballs are fired from
+[SerializedField] private GameObject[] fireballs;
+private Animator anim;
+private PlayerMovement playerMovement;
+private float cooldownTimer = Mathf.Infinity;
 
     private void Awake()
     {
@@ -25,6 +27,9 @@ public class playerAttack : MonoBehaviour
     {
         anim.SetTrigger("attack");
         cooldownTimer = 0;
+        fireballs[0].transform.position = firePoint.position;
+        fireballs[0].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
+        //pools fireballs so creates multiple fireballs immediately, then deactivates fireballs when it hits, and waits for it to be reused
     }
 
 }
