@@ -3,7 +3,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField]private float speed;
-    private float direction
+    private float direction;
     private bool hit;
 
     private Animator anim;
@@ -31,7 +31,7 @@ public class Projectile : MonoBehaviour
 
       public void SetDirection(float _direction)
   {
-     direction = _direction
+     direction = _direction;
      gameObject.SetActive(true);
      hit = false;
      boxCollider.enabled = true;
