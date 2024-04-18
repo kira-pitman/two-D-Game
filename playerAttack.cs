@@ -1,23 +1,24 @@
 using UnityEngine;
 
-public class playerAttack : MonoBehaviour
+public class PlayerAttack : MonoBehaviour
 {
-[SerializeField] private float attackCooldown; // time between attacks
-[SerializeField] private Transform firePoint; // where fireballs are fired from
-[SerializeField] private GameObject[] fireballs;
-private Animator anim;
-private PlayerMovement playerMovement;
-private float cooldownTimer = Mathf.Infinity;
+    [SerializeField] private float attackCooldown; // time between attacks
+    [SerializeField] private Transform firePoint; // where fireballs are fired from
+    [SerializeField] private GameObject[] fireballs;
+
+    private Animator anim;
+    private PlayerMovement playerMovement;
+    private float cooldownTimer = Mathf.Infinity;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        playerMovement = GetComponent<playerMovement>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     private void Update()
     {
-        if (Input.GetMouseButton(0) && cooldownTimer > attackCooldown)
+        if (Input.GetMouseButton(0) && cooldownTimer > attackCooldown && playerMovement.canAttack())
             Attack();
 
         cooldownTimer += Time.deltaTime;
@@ -32,4 +33,6 @@ private float cooldownTimer = Mathf.Infinity;
         //pools fireballs so creates multiple fireballs immediately, then deactivates fireballs when it hits, and waits for it to be reused
     }
 
+    
 }
+
