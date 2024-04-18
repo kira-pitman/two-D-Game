@@ -35,7 +35,7 @@ public class PlayerAttack : MonoBehaviour
 
      private int FindFireball()
  {
-     for (int i = 0; fireballs.Length; i++)
+     for (int i = 0; i < fireballs.Length; i++)
      {
          if (!fireballs[i].activeInHierarchy)
              return i;
