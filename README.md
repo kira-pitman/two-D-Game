@@ -7,3 +7,20 @@ but will be adding my own spin once I have the basics down.
 ## Tech Used
 - C#
 - Unity
+
+## Progress
+-[x] Player Movement
+-[x] Animation
+-[x] Wall Jumping
+-[x] Shooting
+-[x] Graphics
+-[] Camera
+-[] Health
+-[] IFrames
+-[] Traps
+-[] Enemies
+-[] Audio
+-[] Advanced Jumping
+-[] Checkpoints & Respawn
+-[] Game Over
+-[] Pause Menu
