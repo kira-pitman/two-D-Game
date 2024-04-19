@@ -14,13 +14,13 @@ but will be adding my own spin once I have the basics down.
 - [x] Wall Jumping
 - [x] Shooting
 - [x] Graphics
-- [] Camera
-- [] Health
-- [] IFrames
-- [] Traps
-- [] Enemies
-- [] Audio
-- [] Advanced Jumping
-- [] Checkpoints & Respawn
-- [] Game Over
-- [] Pause Menu
+- [ ] Camera
+- [ ] Health
+- [ ] IFrames
+- [ ] Traps
+- [ ] Enemies
+- [ ] Audio
+- [ ] Advanced Jumping
+- [ ] Checkpoints & Respawn
+- [ ] Game Over
+- [ ] Pause Menu
