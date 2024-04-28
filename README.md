@@ -14,7 +14,7 @@ but will be adding my own spin once I have the basics down.
 - [x] Wall Jumping
 - [x] Shooting
 - [x] Graphics
-- [ ] Camera
+- [x] Camera
 - [ ] Health
 - [ ] IFrames
 - [ ] Traps
