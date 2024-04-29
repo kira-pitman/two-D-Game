@@ -20,6 +20,7 @@ public class Health : MonoBehaviour
         if (currentHealth > 0)
         {
             anim.SetTrigger("hurt");
+            //iframes
         }
         else
         {
@@ -37,4 +38,9 @@ public class Health : MonoBehaviour
       if (Input.GetKeyDown(KeyCode.E))
           TakeDamage(1);
   }
+
+   public void AddHealth(float _value)
+ {
+     currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
+ }
 }
