@@ -16,7 +16,7 @@ but will be adding my own spin once I have the basics down.
 - [x] Graphics
 - [x] Camera
 - [x] Health
-- [ ] IFrames
+- [x] IFrames
 - [ ] Traps
 - [ ] Enemies
 - [ ] Audio
