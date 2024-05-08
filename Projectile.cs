@@ -23,7 +23,8 @@ public class Projectile : MonoBehaviour
         transform.Translate(movementSpeed, 0, 0);
 
         lifetime += Time.deltaTime;
-        if(lifetime > 5) gameObject.SetActive(false); // makes sure if fireball doesn't hit anything it won't stop it from deactivating
+        if(lifetime > 5) gameObject.SetActive(false); 
+        // makes sure if fireball doesn't hit anything it won't stop it from deactivating
     }
 
     private void OnTriggerEnter2D(Collider2D collison)
@@ -44,7 +45,7 @@ public class Projectile : MonoBehaviour
         float localScaleX = transform.localScale.x;
         if (Mathf.Sign(localScaleX) != _direction)
             localScaleX = -localScaleX;
-        // make fireball change direction when fired
+            // make fireball change direction when fired
     
         transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
     }

@@ -33,14 +33,14 @@ public class PlayerAttack : MonoBehaviour
         //pools fireballs so creates multiple fireballs immediately, then deactivates fireballs when it hits, and waits for it to be reused
     }
 
-     private int FindFireball()
- {
-     for (int i = 0; i < fireballs.Length; i++)
-     {
-         if (!fireballs[i].activeInHierarchy)
-             return i;
-     }
-     return 0;
- }
+    private int FindFireball()
+    {
+        for (int i = 0; i < fireballs.Length; i++)
+        {
+            if (!fireballs[i].activeInHierarchy)
+                return i;
+        }
+        return 0;
+    }
 }
 
